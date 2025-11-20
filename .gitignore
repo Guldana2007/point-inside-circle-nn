@@ -1,4 +1,62 @@
+# -------------------------------
+# Python cache and compiled files
+# -------------------------------
 __pycache__/
+*.py[cod]
+*$py.class
+
+# -------------------------------
+# Virtual environment directories
+# -------------------------------
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+
+# -------------------------------
+# Jupyter Notebook checkpoints
+# -------------------------------
 .ipynb_checkpoints/
-*.pyc
+
+# -------------------------------
+# System files
+# -------------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# TensorFlow / Keras model files
+# -------------------------------
 *.h5
+*.hdf5
+*.keras
+*.pb
+
+# -------------------------------
+# Logs and temporary files
+# -------------------------------
+*.log
+*.tmp
+*.out
+
+# -------------------------------
+# IDE / Editors
+# -------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------------
+# Python packaging
+# -------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# -------------------------------
+# Jupyter runtime files
+# -------------------------------
+.jupyter/
