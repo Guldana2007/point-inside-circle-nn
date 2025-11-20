@@ -1,4 +1,5 @@
-#**Point Inside Circle Neural Network**
+# This is H1
+**Point Inside Circle Neural Network**
 **1. Introduction**
 
 This project demonstrates the development and training of a simple feed-forward neural network (Multi-Layer Perceptron) designed to determine whether a point with coordinates (x, y) lies inside a circle of radius 5 centered at (0, 0).
