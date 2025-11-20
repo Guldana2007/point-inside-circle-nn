@@ -1,181 +1,102 @@
 Point Inside Circle Neural Network
+1. Introduction
 
-This project demonstrates how a simple neural network (Multi-Layer Perceptron) can classify whether a point (x, y) lies inside a circle of radius 5 centered at (0, 0).
+This project demonstrates the development and training of a simple feed-forward neural network (Multi-Layer Perceptron) designed to determine whether a point with coordinates (x, y) lies inside a circle of radius 5 centered at (0, 0).
+A point belongs to the circle if the following condition is satisfied:
 
-The mathematical condition for a point to be inside the circle is:
+x² + y² ≤ 25
 
-𝑥
-2
-+
-𝑦
-2
-≤
-25
-x
-2
-+y
-2
-≤25
-Project Description
+The model is trained on synthetically generated data and evaluated on a separate test set.
+A helper function is also provided to classify individual points manually.
 
-The workflow includes the following steps:
+2. Dataset Description
 
-Random points are generated within the range [-6, 6] × [-6, 6].
+A dataset of random points is generated within the square interval:
 
-Each point is labeled as:
+x ∈ [-6, 6]
+y ∈ [-6, 6]
 
-1 — if the point is inside the circle
+Each point is assigned a binary label based on its position:
 
-0 — if it is outside
+1 — the point lies inside the circle
 
-A neural network is built and trained to learn this classification boundary.
+0 — the point lies outside
 
-The model is evaluated on unseen test data.
+The dataset is then split into training and testing subsets using a standard 80/20 ratio.
 
-A helper function is provided for manual point classification.
+3. Neural Network Architecture
 
-Model Architecture
+The model architecture consists of the following layers:
 
-A simple feed-forward neural network is used:
+Input layer: 2 numerical features (x, y)
 
-Input layer: 2 features (x, y)
+Hidden layer 1: 16 neurons, ReLU activation
 
-Hidden layer: 16 neurons, ReLU activation
-
-Hidden layer: 16 neurons, ReLU activation
+Hidden layer 2: 16 neurons, ReLU activation
 
 Output layer: 1 neuron, Sigmoid activation
 
-ReLU is used in hidden layers because it works well for nonlinear boundaries and avoids vanishing gradients.
-Sigmoid is used in the output layer to produce a probability value between 0 and 1.
+ReLU activation is used in the hidden layers due to its effectiveness for nonlinear problems and its resistance to the vanishing gradient issue.
+Sigmoid activation is selected for the output layer because the task is a binary classification problem.
 
-Training Algorithm (Backpropagation)
+4. Training Methodology
 
 Training is performed using the Backpropagation algorithm.
+Key steps include:
 
-Forward pass:
-Each layer computes a weighted sum followed by an activation function.
+4.1 Forward Pass
 
-Error calculation:
+Each layer computes a weighted sum of inputs followed by the application of an activation function.
 
-𝑒
-𝑟
-𝑟
-𝑜
-𝑟
-=
-𝑒
-𝑥
-𝑝
-𝑒
-𝑐
-𝑡
-𝑒
-𝑑
-−
-𝑝
-𝑟
-𝑒
-𝑑
-𝑖
-𝑐
-𝑡
-𝑒
-𝑑
-error=expected−predicted
+4.2 Error Calculation
 
-Delta computation:
+The model's prediction is compared to the expected label to compute the error.
 
-𝛿
-=
-𝑒
-𝑟
-𝑟
-𝑜
-𝑟
-⋅
-𝑓
-′
-(
-𝑜
-𝑢
-𝑡
-)
-δ=error⋅f
-′
-(out)
+4.3 Delta Computation
 
-where 
-𝑓
-′
-f
-′
- is the derivative of the activation function.
+The delta value for each neuron is determined as the product of the error and the derivative of the activation function.
 
-Weight update rule:
+4.4 Weight Update
 
-𝑤
-𝑛
-𝑒
-𝑤
-=
-𝑤
-𝑜
-𝑙
-𝑑
-+
-𝜂
-⋅
-𝛿
-⋅
-𝑖
-𝑛
-𝑝
-𝑢
-𝑡
-w
-new
-	​
+Weights are updated according to the rule:
 
-=w
-old
-	​
+w_new = w_old + η × δ × input
 
-+η⋅δ⋅input
+where η is the learning rate.
+TensorFlow handles all internal gradient computations automatically through the model.fit() procedure.
 
-TensorFlow automatically handles all computations during training using model.fit().
+5. Project Files
 
-Project Files
+circle_classifier.py — main Python implementation
 
-circle_classifier.py — main Python script
+circle_classifier.ipynb — Jupyter Notebook with explanations and visualizations
 
-circle_classifier.ipynb — explanatory Jupyter Notebook with theory and visualizations
+(Optional) requirements.txt — dependency list
 
-(Optional) You may include a requirements.txt file to install dependencies easily.
+6. Execution Instructions
 
-How to Run
-
-Install dependencies:
+To install dependencies:
 
 pip install -r requirements.txt
 
 
-Run the script:
+To run the Python script:
 
 python circle_classifier.py
 
 
-Or open the notebook:
+To open the Jupyter Notebook:
 
 jupyter notebook
 
-Example Output
+7. Example Results
 
-A correctly trained model should classify points like:
+The trained model demonstrates high classification accuracy.
+Typical outputs include:
 
-Point (1.00, 1.00) -> inside
-Point (6.00, 0.00) -> outside
+Point (1.00, 1.00) -> inside the circle
+Point (6.00, 0.00) -> outside the circle
 
-Purpose
+8. Purpose of the Project
 
-This project was created for educational purposes to illustrate basic concepts of neural networks, activation functions, and the Backpropagation training algorithm.
+This project is intended for educational use and demonstrates fundamental concepts of neural networks, activation functions, and the Backpropagation learning algorithm.
