@@ -1,3 +1,7 @@
+<a target="_blank" href="https://colab.research.google.com/github/Guldana2007/point-inside-circle-nn/blob/main/circle_classifier.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
+</a>
+
 ## **Point Inside Circle Neural Network**
 **1. Introduction**
 
