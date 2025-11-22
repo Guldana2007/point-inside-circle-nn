@@ -126,8 +126,11 @@ After training, the model typically achieves high accuracy (≈95–99%).
 Example outputs:
 
 Point (1.00, 1.00) → inside the circle
+
 Point (6.00, 0.00) → outside the circle
+
 Point (4.00, 4.00) → outside
+
 Point (0.00, 3.50) → inside
 
 ---
