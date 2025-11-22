@@ -1,6 +1,7 @@
 <a target="_blank" href="https://colab.research.google.com/github/Guldana2007/point-inside-circle-nn/blob/main/circle_classifier.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
 </a>
+
 You can run this project directly in Google Colab using the button above.  
 The notebook contains the full dataset generation, model definition, training process, and example predictions.
 
