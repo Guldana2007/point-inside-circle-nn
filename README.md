@@ -46,6 +46,13 @@ Output layer: 1 neuron, Sigmoid activation
 ReLU activation is used in the hidden layers due to its effectiveness for nonlinear problems and its resistance to the vanishing gradient issue.
 Sigmoid activation is selected for the output layer because the task is a binary classification problem.
 
+### Data Visualization
+
+Below is a visualization showing randomly generated points and the circle of radius 5.
+
+![Circle points](circle_points.png)
+
+
 **4. Training Methodology**
 
 Training is performed using the Backpropagation algorithm.
