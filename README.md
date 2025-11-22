@@ -104,43 +104,40 @@ A validation split shows how well the model performs on new, unseen data.
 
 ## **7. How to Run**
 
-# Install dependencies
-
+### **Install dependencies**
 ```bash
-pip install -r requirements.txt ``` 
+pip install -r requirements.txt
+Run the Python script
+bash
+Копировать код
+python circle_classifier.py
+Open the notebook locally
+bash
+Копировать код
+jupyter notebook
+Or simply use Google Colab (recommended) — the button at the top of this README.
 
-# Run the Python script:
-```bash
-python circle_classifier.py ``` 
-
-# Open the notebook locally:
-```bash
-jupyter notebook ``` 
-
-# Or simply use Google Colab (recommended) — the button at the top of this README.
-
-## **8. Example Predictions
-
+8. Example Predictions
 After training, the model typically achieves high accuracy (≈95–99%).
 
 Example outputs:
+
+scss
+Копировать код
 Point (1.00, 1.00) → inside the circle
 Point (6.00, 0.00) → outside the circle
 Point (4.00, 4.00) → outside
 Point (0.00, 3.50) → inside
-
-## **9. Purpose of the Project
-
+9. Purpose of the Project
 This project is designed for learning and demonstration purposes.
 It shows:
 
-how to generate synthetic datasets,
+how to generate synthetic datasets
 
-how a neural network is built and trained,
+how a neural network is built and trained
 
-how classification works,
+how classification works
 
-and how to use TensorFlow/Keras for simple ML tasks.
+how to use TensorFlow/Keras for simple ML tasks
 
 The idea is to make machine learning concepts easy, visual, and intuitive.
-
