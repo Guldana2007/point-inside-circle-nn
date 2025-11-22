@@ -105,12 +105,14 @@ A validation split shows how well the model performs on new, unseen data.
 ## **7. How to Run**
 
 ### **Install dependencies**
-```bash
+
 pip install -r requirements.txt
+
 Run the Python script
 bash
 Копировать код
 python circle_classifier.py
+
 Open the notebook locally
 bash
 Копировать код
