@@ -5,7 +5,7 @@
 You can run this project directly in Google Colab using the button above.
 
 
-## **Point Inside Circle Neural Network**
+### **Point Inside Circle Neural Network**
 **1. Introduction**
 
 This project demonstrates the development and training of a simple feed-forward neural network (Multi-Layer Perceptron) designed to determine whether a point with coordinates (x, y) lies inside a circle of radius 5 centered at (0, 0).
@@ -16,7 +16,7 @@ A point belongs to the circle if the following condition is satisfied:
 The model is trained on synthetically generated data and evaluated on a separate test set.
 A helper function is also provided to classify individual points manually.
 
-**2. Dataset Description**
+### **2. Dataset Description**
 
 A dataset of random points is generated within the square interval:
 
@@ -31,7 +31,7 @@ Each point is assigned a binary label based on its position:
 
 The dataset is then split into training and testing subsets using a standard 80/20 ratio.
 
-**3. Neural Network Architecture**
+### **3. Neural Network Architecture**
 
 The model architecture consists of the following layers:
 
@@ -53,7 +53,7 @@ Below is a visualization showing randomly generated points and the circle of rad
 ![Circle points](circle_points.png)
 
 
-**4. Training Methodology**
+### **4. Training Methodology**
 
 Training is performed using the Backpropagation algorithm.
 Key steps include:
@@ -79,7 +79,7 @@ w_new = w_old + η × δ × input
 where η is the learning rate.
 TensorFlow handles all internal gradient computations automatically through the model.fit() procedure.
 
-**5. Project Files**
+### **5. Project Files**
 
 circle_classifier.py — main Python implementation
 
@@ -87,7 +87,7 @@ circle_classifier.ipynb — Jupyter Notebook with explanations and visualization
 
 (Optional) requirements.txt — dependency list
 
-**6. Execution Instructions**
+### **6. Execution Instructions**
 
 To install dependencies:
 
@@ -103,7 +103,7 @@ To open the Jupyter Notebook:
 
 jupyter notebook
 
-**7. Example Results**
+### **7. Example Results**
 
 The trained model demonstrates high classification accuracy.
 Typical outputs include:
@@ -111,6 +111,6 @@ Typical outputs include:
 Point (1.00, 1.00) -> inside the circle
 Point (6.00, 0.00) -> outside the circle
 
-**8. Purpose of the Project**
+### **8. Purpose of the Project**
 
 This project is intended for educational use and demonstrates fundamental concepts of neural networks, activation functions, and the Backpropagation learning algorithm.
