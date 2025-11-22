@@ -104,17 +104,18 @@ A validation split shows how well the model performs on new, unseen data.
 
 ## **7. How to Run**
 
-### **Install dependencies**
+### **Install dependencies:**
 
 pip install -r requirements.txt
 
-Run the Python script: 
+### **Run the Python script:** 
+
 python circle_classifier.py
 
-Open the notebook locally:
+### **Open the notebook locally:**
 jupyter notebook
 
-Or simply use Google Colab (recommended) — the button at the top of this README.
+### **Or simply use Google Colab (recommended) — the button at the top of this README.**
 
 ## **8. Example Predictions
 
