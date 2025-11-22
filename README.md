@@ -6,7 +6,8 @@ You can run this project directly in Google Colab using the button above.
 
 
 ### **Point Inside Circle Neural Network**
-**1. Introduction**
+
+### **1. Introduction**
 
 This project demonstrates the development and training of a simple feed-forward neural network (Multi-Layer Perceptron) designed to determine whether a point with coordinates (x, y) lies inside a circle of radius 5 centered at (0, 0).
 A point belongs to the circle if the following condition is satisfied:
