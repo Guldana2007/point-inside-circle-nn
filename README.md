@@ -106,6 +106,7 @@ A validation split shows how well the model performs on new, unseen data.
 
 # Install dependencies
 
+```bash
 pip install -r requirements.txt
 
 # Run the Python script:
