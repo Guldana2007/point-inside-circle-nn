@@ -107,13 +107,15 @@ A validation split shows how well the model performs on new, unseen data.
 # Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt ``` 
 
 # Run the Python script:
-python circle_classifier.py
+```bash
+python circle_classifier.py ``` 
 
 # Open the notebook locally:
-jupyter notebook
+```bash
+jupyter notebook ``` 
 
 # Or simply use Google Colab (recommended) — the button at the top of this README.
 
