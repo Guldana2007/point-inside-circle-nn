@@ -4,114 +4,107 @@
 
 You can run this project directly in Google Colab using the button above.
 
+---
 
-### **Point Inside Circle Neural Network**
+# **Point Inside Circle — Neural Network Classifier**
 
-### **1. Introduction**
+## **1. Introduction**
 
-This project demonstrates the development and training of a simple feed-forward neural network (Multi-Layer Perceptron) designed to determine whether a point with coordinates (x, y) lies inside a circle of radius 5 centered at (0, 0).
-A point belongs to the circle if the following condition is satisfied:
+This project demonstrates a simple neural network that learns to answer one question:
+
+**Is a point (x, y) inside a circle of radius 5 centered at (0, 0)?**
+
+A point belongs to the circle if:
 
 **x² + y² ≤ 25**
 
-The model is trained on synthetically generated data and evaluated on a separate test set.
-A helper function is also provided to classify individual points manually.
+We generate a synthetic dataset of random points, train a neural network using TensorFlow/Keras, evaluate accuracy, and provide a helper function that allows checking individual points manually.
 
-### **2. Dataset Description**
+The goal is to show how a small feed-forward neural network can learn a simple geometric rule.
 
-A dataset of random points is generated within the square interval:
+---
 
-x ∈ [-6, 6]
-y ∈ [-6, 6]
+## **2. Dataset Description**
 
-Each point is assigned a binary label based on its position:
+We generate **20 000 random points** in a square:
 
-**1 — the point lies inside the circle**
+- **x ∈ [-6, 6]**
+- **y ∈ [-6, 6]**
 
-**0 — the point lies outside**
+Each point receives a binary label:
 
-The dataset is then split into training and testing subsets using a standard 80/20 ratio.
+- **1 — inside the circle**
+- **0 — outside**
 
-### **3. Neural Network Architecture**
+The dataset is then split into:
 
-The model architecture consists of the following layers:
+- **80% training data**
+- **20% test data**
 
-Input layer: 2 numerical features (x, y)
+This shows how well the model works not only on points it has seen before, but also on brand-new points.
 
-Hidden layer 1: 16 neurons, ReLU activation
+---
 
-Hidden layer 2: 16 neurons, ReLU activation
+## **3. Neural Network Architecture**
 
-Output layer: 1 neuron, Sigmoid activation
+The model is a small fully connected network:
 
-ReLU activation is used in the hidden layers due to its effectiveness for nonlinear problems and its resistance to the vanishing gradient issue.
-Sigmoid activation is selected for the output layer because the task is a binary classification problem.
+- **Input layer:** 2 numbers (x, y)  
+- **Hidden layer 1:** 16 neurons, ReLU activation  
+- **Hidden layer 2:** 16 neurons, ReLU activation  
+- **Output layer:** 1 neuron, Sigmoid activation  
 
-### Data Visualization
+### Why ReLU?
+
+ReLU helps the model learn nonlinear shapes (like circles) effectively.
+
+### Why Sigmoid?
+
+Sigmoid outputs a value between **0 and 1**, which represents the probability that the point is inside the circle.
+
+---
+
+## **4. Data Visualization**
 
 Below is a visualization showing randomly generated points and the circle of radius 5.
 
 ![Circle points](circle_points.png)
 
+This helps understand the geometry of the task.
 
-### **4. Training Methodology**
+---
 
-Training is performed using the Backpropagation algorithm.
-Key steps include:
+## **5. Training Process**
 
-**4.1 Forward Pass**
+TensorFlow handles all mathematical steps internally, but the general idea is simple:
 
-Each layer computes a weighted sum of inputs followed by the application of an activation function.
+1. The model receives (x, y).  
+2. It tries to predict whether the point is inside the circle.  
+3. The prediction is compared to the correct answer.  
+4. The optimizer (`adam`) adjusts the model’s internal weights to reduce the error.  
+5. After many training cycles (epochs), the model learns the rule.
 
-**4.2 Error Calculation**
+We track both:
 
-The model's prediction is compared to the expected label to compute the error.
+- **loss** — how far predictions are from correct answers  
+- **accuracy** — percentage of correct predictions  
 
-**4.3 Delta Computation**
+A validation split shows how well the model performs on new, unseen data.
 
-The delta value for each neuron is determined as the product of the error and the derivative of the activation function.
+---
 
-**4.4 Weight Update**
+## **6. Project Files**
 
-Weights are updated according to the rule:
+- **circle_classifier.py** — standalone Python script  
+- **circle_classifier.ipynb** — Jupyter Notebook with explanations and visualizations  
+- **requirements.txt** *(optional)* — list of dependencies  
+- **circle_points.png** — visualization image included in the README  
 
-w_new = w_old + η × δ × input
+---
 
-where η is the learning rate.
-TensorFlow handles all internal gradient computations automatically through the model.fit() procedure.
+## **7. How to Run**
 
-### **5. Project Files**
+### Install dependencies
 
-circle_classifier.py — main Python implementation
-
-circle_classifier.ipynb — Jupyter Notebook with explanations and visualizations
-
-(Optional) requirements.txt — dependency list
-
-### **6. Execution Instructions**
-
-To install dependencies:
-
+```bash
 pip install -r requirements.txt
-
-
-To run the Python script:
-
-python circle_classifier.py
-
-
-To open the Jupyter Notebook:
-
-jupyter notebook
-
-### **7. Example Results**
-
-The trained model demonstrates high classification accuracy.
-Typical outputs include:
-
-Point (1.00, 1.00) -> inside the circle
-Point (6.00, 0.00) -> outside the circle
-
-### **8. Purpose of the Project**
-
-This project is intended for educational use and demonstrates fundamental concepts of neural networks, activation functions, and the Backpropagation learning algorithm.
